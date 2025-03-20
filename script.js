@@ -1,5 +1,30 @@
 // script.js
+
+// Function to initialize header scroll effect
+function initHeaderScroll() {
+    const header = document.querySelector('header');
+    if (!header) {
+        console.warn('Header element not found'); // Debug if header is missing
+        return;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+// Run immediately to catch early page loads
+initHeaderScroll();
+
+// Run on DOMContentLoaded as a backup for late-loaded DOM
 document.addEventListener('DOMContentLoaded', function() {
+    // Re-run header scroll setup
+    initHeaderScroll();
+
     // Mock data for items
     const items = [
         {
@@ -47,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Populate the items grid
     function populateItems(filter = 'all') {
         const itemsGrid = document.querySelector('.items-grid');
+        if (!itemsGrid) return; // Exit if grid not found (e.g., on login page)
+        
         itemsGrid.innerHTML = '';
         
         const filteredItems = filter === 'all' 
@@ -76,22 +103,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize the items grid
+    // Initialize the items grid (only if present on the page)
     populateItems();
 
     // Handle tab clicks
     const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // Remove active class from all tabs
-            tabs.forEach(t => t.classList.remove('active'));
-            // Add active class to clicked tab
-            this.classList.add('active');
-            // Filter items
-            const filter = this.getAttribute('data-filter');
-            populateItems(filter);
+    if (tabs.length > 0) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                populateItems(filter);
+            });
         });
-    });
+    }
 
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -101,16 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.auth-buttons').classList.toggle('active');
         });
     }
-
-    // Sticky header
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
 
     // Counter animation
     const counters = document.querySelectorAll('.counter');
@@ -130,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        // Start animation when element is in viewport
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 animate();
