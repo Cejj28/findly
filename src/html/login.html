@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Findly - Lost and Found Platform</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="auth.css">
+    <title>Log In | Findly - Lost and Found Platform</title>
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/auth.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <div class="logo">
-                    <img src="logo.png" alt="Findly Logo">
-                </div>
-                
+            <a href="/index.html" class="logo">
+                <div class="logo-icon">F</div>
                 <span>Findly</span>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li><a href="#">Lost Items</a></li>
                     <li><a href="#">Found Items</a></li>
                     <li><a href="#">Report Item</a></li>
@@ -43,25 +40,11 @@
         <div class="auth-container">
             <div class="auth-card">
                 <div class="auth-header">
-                    <h1>Create Account</h1>
-                    <p>Join Findly and start reconnecting with your belongings</p>
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your Findly account</p>
                 </div>
                 
-                <form id="registerForm" class="auth-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
-                            <div class="error-message" id="firstNameError"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
-                            <div class="error-message" id="lastNameError"></div>
-                        </div>
-                    </div>
-                    
+                <form id="loginForm" class="auth-form">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -71,34 +54,21 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="password-input">
-                            <input type="password" id="password" name="password" placeholder="Create a password" required>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
                             <button type="button" class="password-toggle" id="passwordToggle">Show</button>
-                        </div>
-                        <div class="password-strength">
-                            <div class="strength-meter">
-                                <div class="strength-bar" id="strengthBar"></div>
-                            </div>
-                            <span id="strengthText">Password strength</span>
                         </div>
                         <div class="error-message" id="passwordError"></div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <div class="password-input">
-                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
-                            <button type="button" class="password-toggle" id="confirmPasswordToggle">Show</button>
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Remember me</label>
                         </div>
-                        <div class="error-message" id="confirmPasswordError"></div>
+                        <a href="#" class="forgot-password">Forgot password?</a>
                     </div>
                     
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
-                        <div class="error-message" id="termsError"></div>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary btn-full">Create Account</button>
+                    <button type="submit" class="btn-primary btn-full">Sign In</button>
                     
                     <div class="auth-divider">
                         <span>OR</span>
@@ -107,17 +77,17 @@
                     <div class="social-login">
                         <button type="button" class="btn-social btn-google">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
-                            Sign up with Google
+                            Sign in with Google
                         </button>
                         <button type="button" class="btn-social btn-facebook">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/600px-Facebook_Logo_%282019%29.png" alt="Facebook">
-                            Sign up with Facebook
+                            Sign in with Facebook
                         </button>
                     </div>
                 </form>
                 
                 <div class="auth-footer">
-                    Already have an account? <a href="login.html">Sign in</a>
+                    Don't have an account? <a href="register.html">Register now</a>
                 </div>
             </div>
         </div>
@@ -181,7 +151,8 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-    <script src="script.js"></script>
-    <script src="auth.js"></script>
+    <script src="/src/js/script.js"></script>
+    <script src="/src/js/auth.js"></script>
+
 </body>
 </html>
