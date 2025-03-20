@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findly - Lost and Found Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo">
+                    <img src="logo.png" alt="Findly Logo">
+                </div>
+                
+                <span>Findly</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="findly.html">Home</a></li>
+                    <li><a href="#">Lost Items</a></li>
+                    <li><a href="#">Found Items</a></li>
+                    <li><a href="#">Report Item</a></li>
+                    <li><a href="#">How It Works</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html"><button class="btn-secondary">Sign In</button></a>
+                <a href="register.html"><button class="btn-primary">Register</button></a>
+            </div>
+            <button class="mobile-menu-btn" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge">Lost something? Found something?</span>
+                    <h1>Reuniting the USTP-CDO Community with Their Lost Belongings</h1>
+                    <p>Findly@USTP helps students, faculty, staff, and visitors report, search, and recover lost items or return found belongings within the University of Science and Technology of Southern Philippines - Cagayan De Oro branch—creating a more connected and responsible campus.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary">Report an Item</button>
+                        <button class="btn-outline">Browse Items</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Replace the stats card with a simple image -->
+                    <img src="USTP.jpg" alt="Lost and Found Items">
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search">
+            <div class="container">
+                <div class="search-box">
+                    <div class="search-row">
+                        <div class="search-input">
+                            <input type="text" placeholder="Search for lost or found items...">
+                            <button class="search-btn">Search</button>
+                        </div>
+                        <div class="filter-select">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Electronics</option>
+                                <option>Jewelry & Watches</option>
+                                <option>Bags & Wallets</option>
+                                <option>Keys</option>
+                                <option>Documents</option>
+                                <option>Clothing</option>
+                                <option>Pets</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <button class="filter-btn">Filter</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Items Section -->
+        <section class="recent-items">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2>Recent Items</h2>
+                        <p>Browse the latest lost and found items reported on our platform.</p>
+                    </div>
+                    <div class="tabs">
+                        <button class="tab active" data-filter="all">All</button>
+                        <button class="tab" data-filter="lost">Lost</button>
+                        <button class="tab" data-filter="found">Found</button>
+                    </div>
+                </div>
+                
+                <div class="items-grid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+                
+                <div class="view-all">
+                    <button class="btn-outline">View All Items</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="badge">Simple Process</span>
+                    <h2>How Findly Works</h2>
+                    <p>Our platform simplifies the process of reporting and recovering lost items with a few simple steps.</p>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-icon">📱</div>
+                        <h3>Report Your Item</h3>
+                        <p>Submit details about your lost or found item, including images, location, date, and description.</p>
+                        <a href="#" class="link">Get Started</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon">🔍</div>
+                        <h3>Connect & Match</h3>
+                        <p>Our platform automatically matches lost and found items based on descriptions, locations, and dates.</p>
+                        <a href="#" class="link">Learn More</a>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-icon">🎉</div>
+                        <h3>Recover Your Item</h3>
+                        <p>Communicate with the finder or owner, arrange a safe meeting, and verify ownership to reclaim your item.</p>
+                        <a href="#" class="link">Success Stories</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="statistics">
+            <div class="container">
+                <div class="section-header centered">
+                    <h2>Our Impact</h2>
+                    <p>Helping people recover their belongings and reconnect with what matters.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Total Items</h4>
+                        <p class="stat-description">Items reported on our platform</p>
+                        <div class="stat-value"><span class="counter" data-target="1243">0</span> items</div>
+                        <div class="stat-change positive">+12.3%</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h4>Items Returned</h4>
+                        <p class="stat-description">Successfully returned to owners</p>
+                        <div class="stat-value"><span class="counter" data-target="876">0</span> items</div>
+                        <div class="stat-change positive">+10.9%</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h4>Success Rate</h4>
+                        <p class="stat-description">Items recovered successfully</p>
+                        <div class="stat-value"><span class="counter" data-target="70">0</span>%</div>
+                        <div class="stat-change positive">+7.6%</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h4>Active Users</h4>
+                        <p class="stat-description">People using our platform</p>
+                        <div class="stat-value"><span class="counter" data-target="5480">0</span> users</div>
+                        <div class="stat-change positive">+14.2%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Reconnect?</h2>
+                <p>Join thousands of people who have successfully recovered their lost belongings or helped others find theirs. Start your search today.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary">Report an Item</button>
+                    <button class="btn-outline light">Browse Items</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-icon">F</div>
+                        <span>Findly</span>
+                    </div>
+                    <p>Reconnecting people with their lost belongings through a modern, elegant platform designed with simplicity and effectiveness at its core.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">FB</a>
+                        <a href="#" class="social-icon">TW</a>
+                        <a href="#" class="social-icon">IG</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Browse Lost Items</a></li>
+                        <li><a href="#">Browse Found Items</a></li>
+                        <li><a href="#">Report an Item</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p class="contact-item">📍 123 Recovery Lane, Findsville, NY 10001</p>
+                    <p class="contact-item">📞 (555) 123-4567</p>
+                    <p class="contact-item">✉️ support@findly.example.com</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for tips on preventing loss and updates on our platform.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email address">
+                        <button class="btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2023 Findly. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="script.js"></script>
+</body>
+</html>
